@@ -1,5 +1,5 @@
-# PyramidStarter
-PyramidStarter is a simple application that you can clone and start in its' entirety to get a feel for a pyramid project and the setup. You can extend it and develop your own application, eventually deploying to production.
+# BuildozerBuilder
+BuildozerBuilder is a Salt state to generate a Linux VM with buildozer and all dependencies installed.
 
 ## Requirements
   - Vagrant (https://www.vagrantup.com)
@@ -7,63 +7,7 @@ PyramidStarter is a simple application that you can clone and start in its' enti
 	
 ## Quickstart
 	`vagrant up`
-	
-	Check http://localhost:4567
-
-## Available Arguments
-flag + options
-
-    --webserver-machine-name (string)
-    --deploy-mode (production, development)
-    --provider (virtualbox, digital_ocean)
-
-## Example initialization commands
-How to format an argument
-
-vagrant + arguments + up --provider="xyz"
-
-Non-standard vagrant arguments must be embedded between "vagrant" and "up" in the command.
-
-All standard argumenst must come after the "up" string. Consult the examples below for clarification
-
-	Start a production environment locally
-	  vagrant --deploy-mode="production" up
-	Start a production environment with digital ocean
-	  vagrant --deploy-mode="production" up --provider="digital_ocean"
-	Start a named environment in production
-	vagrant --deploy-mode="production" --webserver-machine-name="webserver_name" up --provider="digital_ocean"
-	
-## Deploying to Production
-To deploy to production you'll have to setup your own salt-states for production. The scaffolds to allow you to do so are in /salt/base/webserver_production. I reccomend you take a look at them and at the salt documentation. A great place to start is also to look at the states created in /salt/base/webserver_development.
-
-## The Directory Structure
-```
-|-salt !! The Salt Directory
-|---base
-|-----webserver !! Configuration Common to proudction and development
-|-----webserver_development !! Configuration specific to development
-|-------scripts 
-|-----webserver_production !! Configuration Specific to Production
-|---etc !! Minion Configuration Files
-|---pillar !! Minion specific data (See salt documentation)
-|-source !! The Pyramid Scaffold Directory
-|---build
-|-----bdist.linux-x86_64
-|-----lib.linux-x86_64-2.7
-|-------source
-|---------scripts
-|---------static
-|---------templates
-|---dist
-|---source
-|-----scripts
-|-----static
-|-----templates
-|---source.egg-info
-```																  
-
-## Vagrant digital ocean integration
-https://www.digitalocean.com/community/tutorials/how-to-use-digitalocean-as-your-provider-in-vagrant-on-an-ubuntu-12-10-vps
+	`vagrant ssh`
 
 ## Basic Overview
 Vagrant is a tool for auotmating virtual machines for development purposes. 

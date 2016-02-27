@@ -1,4 +1,4 @@
 base:
    'machine*':
-      - webserver
+      - machine
 
