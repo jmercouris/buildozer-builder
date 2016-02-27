@@ -2,7 +2,7 @@ https://github.com/kivy/buildozer.git:
   git.latest:
     - target: /home/vagrant/buildozer
     - require: 
-      - pkg: git
+      - pkg: buildozer_packages
 
 Run install:
     cmd.run:
